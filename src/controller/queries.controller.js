@@ -4,9 +4,9 @@ const connection = dbConnection();
 
 
 let mayorNumeroClientes = async (req, res) => {
+  let queryEntered = "SELECT * FROM Store ORDER BY DailyCustomerCount DESC LIMIT 10"; 
   await connection.query(
-      "SELECT * FROM Store ORDER BY DailyCustomerCount DESC DELIMITER 10",
-      (err,result) => {
+      queryEntered,(err,result) => {
         if (result){
           res.send(result)
           console.log(JSON.stringify(result));
@@ -16,9 +16,9 @@ let mayorNumeroClientes = async (req, res) => {
 };
 
 let mayorCantidadVentas = async (req, res) => {
+  let queryEntered = "SELECT * FROM Store ORDER BY Store_Sales DESC LIMIT 20"; 
   await connection.query(
-      "SELECT * FROM Store ORDER BY Store_Sales DESC DELIMITER 20",
-      (err,result) => {
+      queryEntered, (err,result) => {
         if (result) 
           res.send(result)
         else
@@ -27,9 +27,9 @@ let mayorCantidadVentas = async (req, res) => {
 };
 
 let mayorAreaFisica = async (req, res) => {
+  let queryEntered = "SELECT * FROM Store ORDER BY Store_Area DESC LIMIT 5" 
   await connection.query(
-      "SELECT * FROM Store ORDER BY Store_Area DESC DELIMITER 5",
-      (err,result) => {
+      queryEntered,(err,result) => {
         if (result) 
           res.send(result)
         else
