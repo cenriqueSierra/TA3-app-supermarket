@@ -13,4 +13,4 @@ app.get('/', (req,res) => {
 app.use('/queries',require('./routes/queries'));
 
 app.listen(app.get('port'));
-console.log(`Server running on port ${PORT}`);
+console.log(`Server running on port ${app.get('port')}`);

@@ -5,6 +5,6 @@ module.exports = () => {
     host: "localhost",
     user:'carlos',
     password: 'carlosSql',
-    database:'store',
+    database:'stores',
   });
   }
