@@ -1,7 +1,8 @@
 const { Router } = require('express');
 const router = Router();
-const {mayorNumeroClientes, mayorCantidadVentas, mayorAreaFisica}= require('../controller/queries.controller');
+const {presentarQuery, mayorNumeroClientes, mayorCantidadVentas, mayorAreaFisica}= require('../controller/queries.controller');
 
+router.get('/',presentarQuery);
 router.get('/mnclientes', mayorNumeroClientes);
 router.get('/mcventas', mayorCantidadVentas);
 router.get('/mafisica', mayorAreaFisica);
